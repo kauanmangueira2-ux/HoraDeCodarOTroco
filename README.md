@@ -1,19 +1,34 @@
-# HoraDeCodarOTroco
-Projeto de lógica de programação onde foram realizadas melhorias e ajustes em um sistema de caixa eletrônico, aplicando pensamento crítico e experimentação no código.
+💳 Caixa Eletrônico
 
-Com o projeto do caixa eletrônico, encontramos algumas questões que são muito importantes, mas não foram aplicadas. 
-Vamos aplicá-las uma a uma.
-Ao acessar o sistema, pergunte o nome do usuário e diga "Olá {Nome} é um prazer ter você por aqui!"
-Na função "inicio", utilize escolha/caso (switch/case) ou when (quando), se possível, para validar a opção escolhida pelo usuário.
-Sempre que o usuário for sacar dinheiro, o valor restante não pode ser negativo, ou seja, caso o usuário tente sacar mais do que tem em saldo, a ação não deve ocorrer. Exiba uma mensagem de "Operação não autorizada".
-Ajustar a ortografia da frase 'Por favor, informe um número entre 1 e 4' para 'Por favor, informe um número entre 1 a 4'.
-Adicionar a opção para ver o extrato (coloque algumas compras ou depósitos fictícios).
-Adicionar a opção para fazer uma transferência. A transferência consiste em você informar o número de uma conta (pode ser qualquer número, mas obrigatoriamente um número, ou seja, nenhum outro caractere deve ser aceito), perguntar o valor da transferência e remover o valor da conta da mesma forma como na ação do saldo. Caso o usuário tente transferir mais do que tem em saldo, a ação não deve ocorrer. Exiba uma mensagem de "Operação não autorizada".
-Sempre que o usuário for transferir dinheiro,  o valor a ser transferido não pode ser igual ou menor que zero, ou seja, caso o usuário tente transferir mais do que tem em saldo, a ação não deve ocorrer. Exiba uma mensagem de "Operação não autorizada".
-No menu principal, a ordem das opções deve ser: Saldo, Extrato, Saque, Depósito, Transferência e Sair.
-Atualize a função "erro" com as novas opções do menu.
-Sempre que o usuário for sacar dinheiro, o valor a ser sacado não pode ser igual ou menor que zero. Exiba uma mensagem de "Operação não autorizada".
-Caso o usuário informe um valor para depósito igual ou menor que zero, não deixe a operação ocorrer. Exiba uma mensagem de "Operação não autorizada".
-Sempre que o usuário for acessar o saldo, sacar, retirar o extrato ou transferir dinheiro é necessário que ele informe uma senha. Essa senha deve ser validada com uma condicional. A senha é 3589.
-Caso a senha informada não seja a correta, é necessário chamar a função atual novamente. 
-Quando o usuário escolher sair do sistema, exiba uma mensagem agradecendo por utilizar os serviços do banco: "{Nome}, foi um prazer ter você por aqui!".
+Este projeto consiste na criação de um simulador de caixa eletrônico, desenvolvido com o objetivo de praticar lógica de programação e conceitos fundamentais como estruturas condicionais, validação de dados e organização de funções.
+
+📚 Objetivo
+
+O projeto tem como finalidade simular algumas operações básicas de um caixa eletrônico, permitindo ao usuário interagir com o sistema através de um menu de opções.
+
+Durante o desenvolvimento foram aplicados conceitos como:
+
+Estruturas condicionais (if/else)
+Estrutura de decisão (switch/case)
+Validação de dados
+Manipulação de variáveis
+Organização do fluxo do programa
+⚙️ Funcionalidades
+
+O sistema permite realizar as seguintes operações:
+
+💰 Consultar saldo
+🧾 Visualizar extrato
+💸 Realizar saque
+📥 Realizar depósito
+🔁 Fazer transferência
+🚪 Sair do sistema
+🔒 Validações do Sistema
+
+O programa possui algumas validações para simular um sistema bancário mais seguro:
+
+Algumas operações exigem senha de acesso.
+O sistema não permite saque ou transferência maior que o saldo disponível.
+Valores de saque, depósito ou transferência não podem ser menores ou iguais a zero.
+O número da conta para transferência aceita apenas números.
+Caso alguma regra seja violada, o sistema exibe a mensagem:
