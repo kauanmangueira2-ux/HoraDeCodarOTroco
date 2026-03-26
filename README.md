@@ -19,11 +19,17 @@ Organização do fluxo do programa
 O sistema permite realizar as seguintes operações:
 
 💰 Consultar saldo
+ 
 🧾 Visualizar extrato
+
 💸 Realizar saque
+
 📥 Realizar depósito
+
 🔁 Fazer transferência
+
 🚪 Sair do sistema
+
 🔒 Validações do Sistema
 
 O programa possui algumas validações para simular um sistema bancário mais seguro:
