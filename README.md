@@ -14,7 +14,7 @@ Validação de dados
 Manipulação de variáveis
 Organização do fluxo do programa
 
-##⚙️  Funcionalidades
+## ⚙️  Funcionalidades
 
 O sistema permite realizar as seguintes operações:
 
