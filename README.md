@@ -1,3 +1,4 @@
+//Falta o 6 pra cima
 # 💳  Caixa Eletrônico
 
 Este projeto consiste na criação de um simulador de caixa eletrônico, desenvolvido com o objetivo de praticar lógica de programação e conceitos fundamentais como estruturas condicionais, validação de dados e organização de funções.
