@@ -1,0 +1,116 @@
+<html>
+
+<head>
+
+	<script>
+		var saldo = 100.5; //Float
+		let historico = ("Carro:  R$ 4.000,00");
+		let nome = prompt("digite o seu nome");
+			alert("Olá " +nome+ " é um prazer ter você por aqui!");
+		
+		function inicio() {
+
+			
+			var escolha = parseInt(prompt('Selecione uma opção 1.) Saldo 2.) Depósito 3.) Saque 4.) Extrato 5.) Sair'));
+			
+
+
+			if (escolha === 1) {
+				let confirmar = prompt("Você escolheu a opção saldo? sim/não")
+				if(confirmar === "sim") {
+				ver_saldo();	
+				} else {
+				inicio();
+				}
+				
+			} else if (escolha === 2) {
+				let confirmar1 = prompt("Você escolheu a opção Depósito? sim/não")
+				if(confirmar1 === "sim") {
+				fazer_deposito();
+				} else {
+				inicio();
+				}
+				
+			} else if (escolha === 3) {
+				let confirmar2 = prompt("Você escolheu a opção Saque? sim/não")
+				if(confirmar2 === "sim") {
+				fazer_saque();
+				} else {
+				inicio();
+				}
+			} else if (escolha ===4) {
+				extrato();
+			} else if (escolha === 5) {
+				sair();
+			} else {
+				erro();
+			}
+		}
+				
+
+		function ver_saldo() {
+			alert('Seu saldo atual é: ' + saldo);
+			inicio();
+		}
+
+		function fazer_deposito() {
+			var deposito = parseFloat(prompt('Qual o valor para depósito?'));
+			// Not a Number
+			if (isNaN(deposito) || deposito === '') {
+				alert('Por favor, informe um número:');
+				fazer_deposito();
+			} else {
+				saldo += deposito;
+				historico += "\nDepósito: R$ " + deposito +",00 " + "\n";
+				ver_saldo();
+			}
+		}
+
+		function fazer_saque() {
+			var saque = parseFloat(prompt('Qual o valor para saque?'));
+			if (isNaN(saque) || saque === '') {
+				alert('Por favor, informe um número:');
+				fazer_saque();
+			} else if (saque > saldo) {
+				alert("Saldo insuficiente");
+				fazer_saque();
+			} else {
+				saldo -= saque;
+				historico += "Saque: R$ " + saque + "\n";
+				
+				ver_saldo();
+			 
+			}
+		}
+
+		function erro() {
+			alert('Por favor, informe um número entre 1 e 4');
+			inicio();
+		}
+
+		function extrato() {
+			alert("EXTRATO:\n\n" + historico + "\nSaldo atual: R$ " + saldo);
+			inicio();
+		}
+
+		function sair() {
+			var confirma = confirm('Você deseja sair?');
+			if (confirma) {
+				window.close();
+			} else {
+				inicio();
+			}
+		}
+
+		
+		
+		
+		inicio();
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
