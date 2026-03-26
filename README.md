@@ -1,8 +1,8 @@
-💳 Caixa Eletrônico
+💳 ##Caixa Eletrônico
 
 Este projeto consiste na criação de um simulador de caixa eletrônico, desenvolvido com o objetivo de praticar lógica de programação e conceitos fundamentais como estruturas condicionais, validação de dados e organização de funções.
 
-📚 Objetivo
+📚 ##Objetivo
 
 O projeto tem como finalidade simular algumas operações básicas de um caixa eletrônico, permitindo ao usuário interagir com o sistema através de um menu de opções.
 
@@ -13,7 +13,8 @@ Estrutura de decisão (switch/case)
 Validação de dados
 Manipulação de variáveis
 Organização do fluxo do programa
-⚙️ Funcionalidades
+
+⚙️ ##Funcionalidades
 
 O sistema permite realizar as seguintes operações:
 
