@@ -5,13 +5,14 @@
 	<script>
 		var saldo = 100.5; //Float
 		let historico = ("Carro:  R$ 4.000,00");
+		let senha = "3589";
 		let nome = prompt("digite o seu nome");
 			alert("Olá " +nome+ " é um prazer ter você por aqui!");
 		
 		function inicio() {
 
 			
-			var escolha = parseInt(prompt('Selecione uma opção 1.) Saldo 2.) Depósito 3.) Saque 4.) Extrato 5.) Sair'));
+			var escolha = parseInt(prompt('Selecione uma opção:\n1 - Ver saldo\n2 - Extato\n3 - Fazer saque\n4 - Fazer depósito\n5 - Transferência\n6 - Sair'));
 			
 
 
@@ -24,9 +25,9 @@
 				}
 				
 			} else if (escolha === 2) {
-				let confirmar1 = prompt("Você escolheu a opção Depósito? sim/não")
+				let confirmar1 = prompt("Você escolheu a opção Extrato? sim/não")
 				if(confirmar1 === "sim") {
-				fazer_deposito();
+				extrato();
 				} else {
 				inicio();
 				}
@@ -39,8 +40,20 @@
 				inicio();
 				}
 			} else if (escolha ===4) {
-				extrato();
+				let confirmar3 = prompt("Você escolheu a opção Depósito? sim/não")
+				if(confirmar3 === "sim") {
+				fazer_deposito();
+				} else {
+				inicio();
+				}
 			} else if (escolha === 5) {
+				let confirmar4 = prompt("Você escolheu a opção Transferência? sim/não")
+				if(confirmar4 === "sim") {
+				transferencia();
+				} else {
+				inicio();
+				}
+			} else if (escolha === 6) {
 				sair();
 			} else {
 				erro();
@@ -49,7 +62,13 @@
 				
 
 		function ver_saldo() {
+			let confirmarsenha = prompt("Digite sua senha para confirmar:");
+			if (confirmarsenha === senha) {
 			alert('Seu saldo atual é: ' + saldo);
+			} else {
+				alert("Senha incorreta");
+				ver_saldo();
+			}
 			inicio();
 		}
 
@@ -59,6 +78,9 @@
 			if (isNaN(deposito) || deposito === '') {
 				alert('Por favor, informe um número:');
 				fazer_deposito();
+			}else if (deposito <= 0) {
+				alert("Operação não autorizada");
+				fazer_deposito();
 			} else {
 				saldo += deposito;
 				historico += "\nDepósito: R$ " + deposito +",00 " + "\n";
@@ -67,16 +89,23 @@
 		}
 
 		function fazer_saque() {
+			let confirmarsenha = prompt("Digite sua senha para confirmar:");
 			var saque = parseFloat(prompt('Qual o valor para saque?'));
-			if (isNaN(saque) || saque === '') {
+			if (confirmarsenha !== senha) {
+				alert("Senha incorreta");
+				fazer_saque();
+			} else if (isNaN(saque) || saque === '') {
 				alert('Por favor, informe um número:');
 				fazer_saque();
+			} else if (saque <= 0) {
+				alert("Operação não autorizada");
+				fazer_saque(); 
 			} else if (saque > saldo) {
 				alert("Saldo insuficiente");
 				fazer_saque();
 			} else {
 				saldo -= saque;
-				historico += "Saque: R$ " + saque + "\n";
+				historico += "\n Saque: R$ " + saque + "\n";
 				
 				ver_saldo();
 			 
@@ -84,26 +113,53 @@
 		}
 
 		function erro() {
-			alert('Por favor, informe um número entre 1 e 4');
+			alert('Por favor, informe um número entre 1 e 6');
 			inicio();
+		}
+		function transferencia() {
+			let confirmarsenha = prompt("Digite sua senha para confirmar:");
+			var contaDestino = Number(prompt('Digite o número da conta de destino:'));
+			var valorTransferencia = parseFloat(prompt('Qual o valor para transferência?'));
+		
+			if (confirmarsenha !== senha) {
+				alert("Senha incorreta");
+				transferencia();
+			} else if (isNaN(contaDestino) || isNaN(valorTransferencia) || valorTransferencia === '' || contaDestino === '') {
+				alert('Por favor, informe um número válido para conta e valor:');
+				transferencia();
+			} else if (valorTransferencia <= 0) {
+				alert("Operação não autorizada");
+				transferencia(); 
+			} else if (valorTransferencia > saldo) {
+				alert("Saldo insuficiente para transferência");
+				transferencia();
+			} else {
+				saldo -= valorTransferencia;
+				historico += "\nTransferência: R$ " + valorTransferencia + " para conta " + contaDestino + "\n";
+				ver_saldo();
+			}
 		}
 
 		function extrato() {
+			let confirmarsenha = prompt("Digite sua senha para confirmar:");
+			if (confirmarsenha !== senha) {
+				alert("Senha incorreta");
+				extrato();
+			} else {
 			alert("EXTRATO:\n\n" + historico + "\nSaldo atual: R$ " + saldo);
 			inicio();
 		}
+	}
 
 		function sair() {
 			var confirma = confirm('Você deseja sair?');
 			if (confirma) {
+				alert('Obrigado por utilizar os serviços do banco ' + nome + ', foi um prazer ter você por aqui!');
 				window.close();
 			} else {
 				inicio();
 			}
 		}
-
-		
-		
 		
 		inicio();
 	</script>
